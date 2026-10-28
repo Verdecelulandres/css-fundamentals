@@ -10,6 +10,8 @@
 }
 
 :root {
+  --clr-sale-400: hsl(3 81% 45%);
+
   --clr-accent-300: hsl(39 94% 57%);
   --clr-accent-400: hsl(39 100% 41%);
 
@@ -179,7 +181,7 @@ a:focus-visible {
 
   color: var(--clr-neutral-100);
   padding: 1.5rem;
-  padding-block-start: 85px;
+  padding-block-start: 120px;
 
   position: relative;
 
@@ -198,6 +200,25 @@ a:focus-visible {
 
 .course > * {
   margin: 0;
+}
+
+.course[data-sale="true"] .course-title::after {
+  content: 'sale';
+  position: absolute;
+  left: 0;
+  top: 65px;
+  font-family: var(--ff-accent);
+  padding: 5px 10px;
+  background: var(--clr-sale-400);
+}
+
+.course[data-feature="feature"]  .course-title::before {
+  content: "⭐" / "Featured course: ";
+  position: absolute;
+  top: 0;
+  right: 20px;
+  background: var(--clr-neutral-900);
+  padding: 5px;
 }
 
 .course-title {
