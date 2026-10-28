@@ -167,6 +167,35 @@ a:focus-visible {
   margin-block-end: 0;
 }
 
+.course {
+  color: var(--clr-neutral-100);
+  padding: 1.5rem;
+  padding-block-start: 85px;
+  position: relative;
+
+  > img {
+    z-index: -1;
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    
+    object-fit: cover;
+  }
+}
+
+.course-tag {
+  font-family: var(--ff-accent);
+  font-weight: 700;
+  color: var(--clr-neutral-900);
+  background-color: var(--clr-accent-300);
+  padding: 5px 10px;
+
+  position: absolute;
+  top: 10px;
+  left: 0;
+}
+
 .page-footer {
   text-align: center;
   background-image: linear-gradient(#444, #000);
