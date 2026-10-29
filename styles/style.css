@@ -82,6 +82,26 @@ a:focus-visible {
   color: inherit;
 }
 
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    translate: 0 100px;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.hero {
+  animation: fade-in 2s;
+}
+
+.hero-content {
+  opacity: 0;
+  animation: fade-in 2s forwards;
+  animation-delay: 1s;
+}
+
 .button {
   font: inherit;
   font-weight: 700;
@@ -187,15 +207,25 @@ a:focus-visible {
 
   isolation: isolate;
 
+  overflow: clip;
+
   > img {
     z-index: -1;
     position: absolute;
     inset: 0;
     height: 100%;
     width: 100%;
-    
+
     object-fit: cover;
   }
+}
+
+.course img {
+  transition: scale 1s;
+}
+
+.course:hover img {
+  scale: 1.1;
 }
 
 .course > * {
@@ -203,7 +233,7 @@ a:focus-visible {
 }
 
 .course[data-sale="true"] .course-title::after {
-  content: 'sale';
+  content: "sale";
   position: absolute;
   left: 0;
   top: 65px;
@@ -212,7 +242,7 @@ a:focus-visible {
   background: var(--clr-sale-400);
 }
 
-.course[data-feature="feature"]  .course-title::before {
+.course[data-feature="feature"] .course-title::before {
   content: "⭐" / "Featured course: ";
   position: absolute;
   top: 0;
